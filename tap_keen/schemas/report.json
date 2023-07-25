@@ -1,0 +1,875 @@
+{
+    "type": "object",
+    "properties": {
+        "ios_version": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "client": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "occured_at": {
+            "format": "date-time",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "model": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "keen": {
+            "type": "object",
+            "properties": {
+                "timestamp": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "timestamp"
+            ]
+        },
+        "parsed_keen_timestamp": {
+            "type": "object",
+            "properties": {
+                "millisecond": {
+                    "type": [
+                        "integer"
+                    ]
+                },
+                "day_of_week_string": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hour": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "timezone_offset": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "day_of_month": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "day_of_week": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "day_of_year": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "second": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "week": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "year": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "month": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "minute": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "quarter_of_year": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "day_of_month",
+                "day_of_week",
+                "day_of_week_string",
+                "day_of_year",
+                "hour",
+                "millisecond",
+                "minute",
+                "month",
+                "quarter_of_year",
+                "second",
+                "timezone_offset",
+                "week",
+                "year"
+            ]
+        },
+        "raw": {
+            "type": "object",
+            "properties": {
+                "progress": {
+                    "type": "object",
+                    "properties": {
+                        "total_hours": {
+                            "type": "number"
+                        },
+                        "total_days": {
+                            "type": "number"
+                        },
+                        "total_minutes": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "total_days",
+                        "total_hours",
+                        "total_minutes"
+                    ]
+                },
+                "plan_entry": {
+                    "type": "object",
+                    "properties": {
+                        "order_in_series": {
+                            "type": "integer"
+                        },
+                        "release_date": {
+                            "type": "string"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "coaches": {
+                            "type": "object",
+                            "properties": {
+                                "user_ids": {
+                                    "type": ["array","string","null"],
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "slugs": {
+                                    "type": ["array","string","null"],
+                                    "items": {
+                                        "type": ["string","null"]
+                                    }
+                                },
+                                "first": {
+                                    "type": "object",
+                                    "properties": {
+                                        "user_id": {
+                                            "type": [
+                                                "integer",
+                                                "null"
+                                            ]
+                                        },
+                                        "slug": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "slug",
+                                        "user_id"
+                                    ]
+                                }
+                            }
+                        },
+                        "class_finder_title": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "time_since_release": {
+                            "type": "object",
+                            "properties": {
+                                "total_hours": {
+                                    "type": "number"
+                                },
+                                "total_days": {
+                                    "type": "number"
+                                },
+                                "total_minutes": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+                                "total_days",
+                                "total_hours",
+                                "total_minutes"
+                            ]
+                        },
+                        "plan": {
+                            "type": "object",
+                            "properties": {
+                                "release_date": {
+                                    "type": "string"
+                                },
+                                "plan_entry_order": {
+                                    "type": "null"
+                                },
+                                "slug": {
+                                    "type": "string"
+                                },
+                                "workouts_in_finder": {
+                                    "type": "integer"
+                                },
+                                "time_since_release": {
+                                    "type": "object",
+                                    "properties": {
+                                        "total_hours": {
+                                            "type": "number"
+                                        },
+                                        "total_days": {
+                                            "type": "number"
+                                        },
+                                        "total_minutes": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "required": [
+                                        "total_days",
+                                        "total_hours",
+                                        "total_minutes"
+                                    ]
+                                },
+                                "workout_count_override": {
+                                    "type": "integer"
+                                },
+                                "workouts_total": {
+                                    "type": "integer"
+                                },
+                                "plan_entry_order_in_finder": {
+                                    "type": "null"
+                                },
+                                "parsed_release_date": {
+                                    "type": "object",
+                                    "properties": {
+                                        "millisecond": {
+                                            "type": "integer"
+                                        },
+                                        "day_of_week_string": {
+                                            "type": "string"
+                                        },
+                                        "hour": {
+                                            "type": "integer"
+                                        },
+                                        "timezone_offset": {
+                                            "type": "integer"
+                                        },
+                                        "day_of_month": {
+                                            "type": "integer"
+                                        },
+                                        "day_of_week": {
+                                            "type": "integer"
+                                        },
+                                        "day_of_year": {
+                                            "type": "integer"
+                                        },
+                                        "second": {
+                                            "type": "integer"
+                                        },
+                                        "week": {
+                                            "type": "integer"
+                                        },
+                                        "year": {
+                                            "type": "integer"
+                                        },
+                                        "month": {
+                                            "type": "integer"
+                                        },
+                                        "minute": {
+                                            "type": "integer"
+                                        },
+                                        "quarter_of_year": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "day_of_month",
+                                        "day_of_week",
+                                        "day_of_week_string",
+                                        "day_of_year",
+                                        "hour",
+                                        "millisecond",
+                                        "minute",
+                                        "month",
+                                        "quarter_of_year",
+                                        "second",
+                                        "timezone_offset",
+                                        "week",
+                                        "year"
+                                    ]
+                                },
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "categories": {
+                                    "type": "object",
+                                    "properties": {
+                                        "slugs": {
+                                            "type": ["array","string","null"],
+                                            "items": {
+                                                "type": ["string","null"]
+                                            }
+                                        },
+                                        "second": {
+                                            "type": "object",
+                                            "properties": {
+                                                "title": {
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "slug": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "id",
+                                                "slug",
+                                                "title"
+                                            ]
+                                        },
+                                        "ids": {
+                                            "type": ["array","string","null"],
+                                            "items": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "third": {
+                                            "type": "object",
+                                            "properties": {
+                                                "title": {
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "slug": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "id",
+                                                "slug",
+                                                "title"
+                                            ]
+                                        },
+                                        "first": {
+                                            "type": "object",
+                                            "properties": {
+                                                "title": {
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "slug": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "id",
+                                                "slug",
+                                                "title"
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            "required": [
+                                "categories",
+                                "id",
+                                "parsed_release_date",
+                                "plan_entry_order",
+                                "plan_entry_order_in_finder",
+                                "release_date",
+                                "slug",
+                                "time_since_release",
+                                "workout_count_override",
+                                "workouts_in_finder",
+                                "workouts_total"
+                            ]
+                        },
+                        "duration": {
+                            "type": "object",
+                            "properties": {
+                                "total_hours": {
+                                    "type": "number"
+                                },
+                                "total_days": {
+                                    "type": "number"
+                                },
+                                "total_minutes": {
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+                                "total_days",
+                                "total_hours",
+                                "total_minutes"
+                            ]
+                        },
+                        "parsed_release_date": {
+                            "type": "object",
+                            "properties": {
+                                "millisecond": {
+                                    "type": "integer"
+                                },
+                                "day_of_week_string": {
+                                    "type": "string"
+                                },
+                                "hour": {
+                                    "type": "integer"
+                                },
+                                "timezone_offset": {
+                                    "type": "integer"
+                                },
+                                "day_of_month": {
+                                    "type": "integer"
+                                },
+                                "day_of_week": {
+                                    "type": "integer"
+                                },
+                                "day_of_year": {
+                                    "type": "integer"
+                                },
+                                "second": {
+                                    "type": "integer"
+                                },
+                                "week": {
+                                    "type": "integer"
+                                },
+                                "year": {
+                                    "type": "integer"
+                                },
+                                "month": {
+                                    "type": "integer"
+                                },
+                                "minute": {
+                                    "type": "integer"
+                                },
+                                "quarter_of_year": {
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "day_of_month",
+                                "day_of_week",
+                                "day_of_week_string",
+                                "day_of_year",
+                                "hour",
+                                "millisecond",
+                                "minute",
+                                "month",
+                                "quarter_of_year",
+                                "second",
+                                "timezone_offset",
+                                "week",
+                                "year"
+                            ]
+                        },
+                        "id": {
+                            "type": "integer"
+                        },
+                        "categories": {
+                            "type": "object",
+                            "properties": {
+                                "slugs": {
+                                    "type": ["array","string","null"],
+                                    "items": {
+                                        "type": ["string","null"]
+                                    }
+                                },
+                                "second": {
+                                    "type": "object",
+                                    "properties": {
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "slug": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "id",
+                                        "slug",
+                                        "title"
+                                    ]
+                                },
+                                "ids": {
+                                    "type": ["array","string","null"],
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "third": {
+                                    "type": "object",
+                                    "properties": {
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "slug": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "id",
+                                        "slug",
+                                        "title"
+                                    ]
+                                },
+                                "first": {
+                                    "type": "object",
+                                    "properties": {
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "slug": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "id",
+                                        "slug",
+                                        "title"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "required": [
+                        "categories",
+                        "class_finder_title",
+                        "coaches",
+                        "duration",
+                        "id",
+                        "order_in_series",
+                        "parsed_release_date",
+                        "plan",
+                        "release_date",
+                        "time_since_release",
+                        "title"
+                    ]
+                },
+                "suggestion": {
+                    "type": "object",
+                    "properties": {
+                        "playlist": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "id": {
+                                    "type": [
+                                        "integer",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "type": {
+                            "type": [
+                                "null",
+                                "string"
+                            ]
+                        },
+                        "present": {
+                            "type": [
+                                "null",
+                                "boolean"
+                            ]
+                        }
+                    }
+                },
+                "progress_percentage": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "plan_entry",
+                "progress",
+                "progress_percentage",
+                "suggestion"
+            ]
+        },
+        "user": {
+            "type": [
+                "object"
+            ],
+            "properties": {
+                "user_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "activated": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "trialed": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "reactivations": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "is_real": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "time_since_trialed": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "total_days": {
+                            "type": [
+                                "number",
+                                "null"
+                            ]
+                        },
+                        "total_hours": {
+                            "type": [
+                                "number",
+                                "null"
+                            ]
+                        },
+                        "total_minutes": {
+                            "type": [
+                                "number",
+                                "null"
+                            ]
+                        }
+                    }
+                },
+                "time_since_activated": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "total_days": {
+                            "type": [
+                                "number",
+                                "null"
+                            ]
+                        },
+                        "total_hours": {
+                            "type": [
+                                "number",
+                                "null"
+                            ]
+                        },
+                        "total_minutes": {
+                            "type": [
+                                "number",
+                                "null"
+                            ]
+                        }
+                    }
+                },
+                "access": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "autorenewing": {
+                            "type": [
+                                "null",
+                                "boolean"
+                            ]
+                        },
+                        "is_public": {
+                            "type": [
+                                "null",
+                                "boolean"
+                            ]
+                        },
+                        "source": {
+                            "type": [
+                                "null",
+                                "string"
+                            ]
+                        },
+                        "time_since_started": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "total_days": {
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ]
+                                },
+                                "total_hours": {
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ]
+                                },
+                                "total_minutes": {
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        },
+                        "time_until_end": {
+                            "type": "object",
+                            "properties": {
+                                "total_days": {
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ]
+                                },
+                                "total_hours": {
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ]
+                                },
+                                "total_minutes": {
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "created_at": {
+            "format": "date-time",
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "geo_info": {
+            "type": "object",
+            "properties": {
+                "province": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "city": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "country": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "coordinates": {
+                    "type": [
+                        "string",
+                        "array",
+                        "null"
+                    ]
+                },
+                "postal_code": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "country_code": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "continent": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "city",
+                "continent",
+                "coordinates",
+                "country",
+                "country_code",
+                "postal_code",
+                "province"
+            ]
+        }
+    }
+}

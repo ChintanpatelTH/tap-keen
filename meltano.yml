@@ -1,0 +1,102 @@
+version: 1
+send_anonymous_usage_stats: true
+project_id: tap-keen
+default_environment: test
+environments:
+- name: test
+plugins:
+  extractors:
+  - name: tap-keen
+    namespace: tap_keen
+    pip_url: -e .
+    capabilities:
+    - state
+    - catalog
+    - discover
+    - about
+    - stream-maps
+    settings:
+    - name: keen_project_id
+      kind: string
+    - name: keen_read_key
+      kind: password
+    - name: start_date
+      kind: string
+    - name: max_fetch_interval
+    config:
+      start_date: '2023-06-26T22:00:00.000+00:00'
+      keen_project_id: 5f3b09aa3cf212746340830d
+    select:
+    - video_time_updates.user
+    - video_time_updates.user.time_since_trialed
+    - video_time_updates.user.time_since_trialed.total_hours
+    - video_time_updates.user.time_since_trialed.total_days
+    - video_time_updates.user.time_since_trialed.total_minutes
+    # - video_time_updates.id
+    # - video_time_updates.parsed_keen_timestamp
+    # - video_time_updates.parsed_keen_timestamp.millisecond
+    # - video_time_updates.parsed_keen_timestamp.day_of_week_string
+    # - video_time_updates.parsed_keen_timestamp.hour
+    # - video_time_updates.parsed_keen_timestamp.timezone_offset
+    # - video_time_updates.parsed_keen_timestamp.day_of_month
+    # - video_time_updates.parsed_keen_timestamp.day_of_week
+    # - video_time_updates.parsed_keen_timestamp.day_of_year
+    # - video_time_updates.parsed_keen_timestamp.second
+    # - video_time_updates.parsed_keen_timestamp.week
+    # - video_time_updates.parsed_keen_timestamp.year
+    # - video_time_updates.parsed_keen_timestamp.month
+    # - video_time_updates.parsed_keen_timestamp.minute
+    # - video_time_updates.parsed_keen_timestamp.quarter_of_year
+    # - video_time_updates.user
+    # - video_time_updates.user.time_since_trialed.total_hours
+    # - video_time_updates.user.time_since_trialed.total_days
+    # - video_time_updates.user.time_since_trialed.total_minutes
+    # - video_time_updates.user.access.time_since_started.total_hours
+    # - video_time_updates.user.access.time_since_started.total_days
+    # - video_time_updates.user.access.time_since_started.total_minutes
+    # - video_time_updates.user.access.time_until_end.total_hours
+    # - video_time_updates.user.access.time_until_end.total_days
+    # - video_time_updates.user.access.time_until_end.total_minutes
+    # - video_time_updates.user.activated
+    # - video_time_updates.user.trialed
+    # - video_time_updates.user.access.autorenewing
+    # - video_time_updates.user.access.source
+    # - video_time_updates.user.reactivations
+    # - video_time_updates.user.is_real
+    # - video_time_updates.user.access.is_public
+    # - video_time_updates.ipad
+    # - video_time_updates.model
+    # - video_time_updates.ios_version
+    # - video_time_updates.raw.progress.total_hours
+    # - video_time_updates.raw.progress.total_days
+    # - video_time_updates.raw.progress.total_minutes
+    # - video_time_updates.ipad
+    # - video_time_updates.occurred_at
+    # - video_time_updates.user.user_id
+    # - video_time_updates.raw.plan_entry.id
+    # - video_time_updates.raw.plan_entry.title
+    # - video_time_updates.raw.plan_entry.plan.id
+    # - video_time_updates.raw.plan_entry.plan.slug
+    # - video_time_updates.raw.plan_entry.plan.release_date
+    # - video_time_updates.raw.plan_entry.coaches.slugs
+    # - video_time_updates.raw.plan_entry.coaches.user_ids
+    # - video_time_updates.raw.plan_entry.coaches.coach_type_slugs
+    # - video_time_updates.raw.plan_entry.duration.total_minutes
+    # - video_time_updates.raw.plan_entry.categories.first.slug
+    # - video_time_updates.raw.plan_entry.categories.second.slug
+    # - video_time_updates.raw.plan_entry.categories.third.slug
+    # - video_time_updates.raw.progress_percentage
+    # - video_time_updates.raw.suggestion.type
+    # - video_time_updates.raw.suggestion.playlist.id
+    # - video_time_updates.client
+    # - video_time_updates.occured_at
+    # - video_time_updates.geo_info.city
+    # - video_time_updates.geo_info.continent
+    # - video_time_updates.geo_info.coordinates
+    # - video_time_updates.geo_info.country
+    # - video_time_updates.geo_info.province
+    # - video_time_updates.keen.timestamp # Path: meltano.yml
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl
