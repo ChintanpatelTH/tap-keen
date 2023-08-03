@@ -33,10 +33,6 @@ class KeenStream(RESTStream):
     start_date: str | None = None
     end_date: str | None = None
 
-    STATE_MSG_FREQUENCY = (
-        1000 * 1000 * 1000
-    )  # Large value to disable write state message from within SDK
-
     @property
     def http_headers(self) -> dict:
         """Return the http headers needed.
@@ -92,6 +88,8 @@ class KeenStream(RESTStream):
             self.start_date = min_date.isoformat()
             self.end_date = updated_at_max.isoformat()
             yield from super().get_records(context)
+            self._increment_stream_state({"created_at": self.end_date}, context=context)
+            self._write_state_message()
             min_date = updated_at_max
 
     def get_url_params(
