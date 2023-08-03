@@ -359,6 +359,9 @@
         },
         "created_at": {
             "type": ["string","null"]
+        },
+        "id": {
+            "type": ["string","null"]
         }
     }
 }

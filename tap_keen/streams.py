@@ -15,7 +15,7 @@ class VideoTimeStream(KeenStream):
     name = "video_time_updates"
     path = "queries/extraction"
     records_jsonpath = "$.result[*]"
-    primary_keys = ["keen.id"]  # noqa: RUF012
+    primary_keys = ["id"]  # noqa: RUF012
     replication_key = "created_at"
     replication_method = "INCREMENTAL"
     schema_filepath = SCHEMAS_DIR / "report.json"
@@ -37,4 +37,5 @@ class VideoTimeStream(KeenStream):
         """
         # Currently this is a workaround to have nested replication keys
         row["created_at"] = row["keen"].pop("created_at")
+        row["id"] = row["keen"].pop("id")
         return row
