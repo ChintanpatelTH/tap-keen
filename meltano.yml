@@ -27,11 +27,7 @@ plugins:
       start_date: '2023-06-26T22:00:00.000+00:00'
       keen_project_id: 5f3b09aa3cf212746340830d
     select:
-    - video_time_updates.user
-    - video_time_updates.user.time_since_trialed
-    - video_time_updates.user.time_since_trialed.total_hours
-    - video_time_updates.user.time_since_trialed.total_days
-    - video_time_updates.user.time_since_trialed.total_minutes
+    - video_time_updates.*
     # - video_time_updates.id
     # - video_time_updates.parsed_keen_timestamp
     # - video_time_updates.parsed_keen_timestamp.millisecond
