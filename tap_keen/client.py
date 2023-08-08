@@ -72,7 +72,7 @@ class KeenStream(RESTStream):
             Each record from the source.
         """
         current_state = self.get_context_state(context)
-        current_date = datetime.now(timezone.utc)
+        current_date = parser.parse("2022-03-16T00:00:02.000+00:00")
         date_window_size = float(self.config.get("max_fetch_interval", 1))
         min_value = current_state.get(
             "replication_key_value",
