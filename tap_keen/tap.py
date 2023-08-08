@@ -34,6 +34,11 @@ class Tapkeen(Tap):
             description="The earliest record date to sync",
         ),
         th.Property(
+            "end_date",
+            th.DateTimeType,
+            description="The latest record date to sync",
+        ),
+        th.Property(
             "max_fetch_interval",
             th.IntegerType,
             default=1,
