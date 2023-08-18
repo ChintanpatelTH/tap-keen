@@ -76,7 +76,7 @@ class KeenStream(RESTStream):
             current_date = parser.parse(self.config.get("end_date"))
         else:
             current_date = datetime.now(timezone.utc)
-        date_window_size = float(self.config.get("max_fetch_interval", 1))
+        date_window_size = float(self.config.get("max_fetch_interval", 24))
         min_value = current_state.get(
             "replication_key_value",
             self.config.get("start_date", ""),
@@ -84,7 +84,7 @@ class KeenStream(RESTStream):
         context = context or {}
         min_date = parser.parse(min_value)
         while min_date < current_date:
-            updated_at_max = min_date + timedelta(hours=date_window_size)
+            updated_at_max = min_date + timedelta(minutes=date_window_size)
             if updated_at_max > current_date:
                 updated_at_max = current_date
 

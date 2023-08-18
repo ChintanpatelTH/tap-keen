@@ -78,6 +78,34 @@
                         "title": {
                             "type": ["string","null"]
                         },
+                        "coaches": {
+                            "type": ["object","null"],
+                            "properties": {
+                                "user_ids": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": ["integer","null"]
+                                    }
+                                },
+                                "slugs": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": ["string","null"]
+                                    }
+                                },
+                                "first": {
+                                    "type": "object",
+                                    "properties": {
+                                        "user_id": {
+                                            "type": ["integer","null"]
+                                        },
+                                        "slug": {
+                                            "type": ["string","null"]
+                                        }
+                                    }
+                                }
+                            }
+                        },
                         "class_finder_title": {
                             "type": ["string","null"]
                         },
@@ -196,6 +224,53 @@
                                 }
                             }
                         },
+                        "categories": {
+                            "type": ["object","null"],
+                            "properties": {
+                                "first": {
+                                    "type": ["object","null"],
+                                    "properties": {
+                                        "title": {
+                                            "type": ["string","null"]
+                                        },
+                                        "id": {
+                                            "type": ["integer","null"]
+                                        },
+                                        "slug": {
+                                            "type": ["string","null"]
+                                        }
+                                    }
+                                },
+                                "second": {
+                                    "type": ["object","null"],
+                                    "properties": {
+                                        "title": {
+                                            "type": ["string","null"]
+                                        },
+                                        "id": {
+                                            "type": ["integer","null"]
+                                        },
+                                        "slug": {
+                                            "type": ["string","null"]
+                                        }
+                                    }
+                                },
+                                "third": {
+                                    "type": ["object","null"],
+                                    "properties": {
+                                        "title": {
+                                            "type": ["string","null"]
+                                        },
+                                        "id": {
+                                            "type": ["integer","null"]
+                                        },
+                                        "slug": {
+                                            "type": ["string","null"]
+                                        }
+                                    }
+                                }
+                            }
+                        },
                         "parsed_release_date": {
                             "type": ["object","null"],
                             "properties": {
@@ -245,6 +320,25 @@
                         }
                     }
                 },
+                "suggestion": {
+                    "type": ["object","null"],
+                    "properties": {
+                        "playlist": {
+                            "type": ["object","null"],
+                            "properties": {
+                                "id": {
+                                    "type": ["integer","null"]
+                                }
+                            }
+                        },
+                        "type": {
+                            "type": ["string","null"]
+                        },
+                        "present": {
+                            "type": ["boolean","null"]
+                        }
+                    }
+                },
                 "progress_percentage": {
                     "type": ["integer","null"]
                 }
@@ -262,6 +356,41 @@
             }
         },
         "client": {
+            "type": ["string","null"]
+        },
+        "ipad": {
+            "type": ["boolean","null"]
+        },
+        "geo_info": {
+            "type": ["object","null"],
+            "properties": {
+                "province": {
+                    "type": ["string","null"]
+                },
+                "city": {
+                    "type": ["string","null"]
+                },
+                "country": {
+                    "type": ["string","null"]
+                },
+                "postal_code": {
+                    "type": ["string","null"]
+                },
+                "country_code": {
+                    "type": ["string","null"]
+                },
+                "continent": {
+                    "type": ["string","null"]
+                },
+                "coordinates": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "occurred_at": {
             "type": ["string","null"]
         },
         "user": {
