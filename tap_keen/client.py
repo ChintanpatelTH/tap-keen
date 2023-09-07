@@ -82,6 +82,7 @@ class KeenStream(RESTStream):
             self.config.get("start_date", ""),
         )
         context = context or {}
+        self.logger.info(f"Starting with : {min_value}")  # noqa: G004
         min_date = parser.parse(min_value)
         while min_date < current_date:
             updated_at_max = min_date + timedelta(minutes=date_window_size)
